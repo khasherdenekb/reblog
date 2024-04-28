@@ -10,7 +10,7 @@ const Navbar = async () => {
     <header className="py-4 backdrop-blur-lg z-[100] flex items-center border-b-[1px] border-b-muted border-neutral-900 justify-between">
       <Link href="/">
         <aside className="flex items-center">
-          <p className="text-3xl font-bold">NextBl</p>
+          <p className="text-3xl font-bold">ReBl</p>
           <PackageOpen className="shadow-sm" />
           <p className="text-3xl font-bold">g</p>
         </aside>
@@ -18,7 +18,7 @@ const Navbar = async () => {
       <aside className="flex items-center gap-4">
         <NavbarMenu />
         <ModeToggle />
-        {true ? (
+        {!true ? (
           <Link
             href="/admin"
             className="relative inline-flex h-10 overflow-hidden rounded-full p-[2px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"

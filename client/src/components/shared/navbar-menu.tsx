@@ -11,8 +11,10 @@ import {
 } from "@/components/ui/navigation-menu";
 import { Search } from "lucide-react";
 import { Button } from "../ui/button";
+import { usePathname } from "next/navigation";
 
 export function NavbarMenu() {
+  const pathname = usePathname();
   return (
     <NavigationMenu>
       <NavigationMenuList className="z-[100]">
@@ -22,47 +24,54 @@ export function NavbarMenu() {
             Search
           </Button>
         </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>Categories</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-              <ListItem href="/docs" title="Productivity">
-                Explore efficiency-boosting strategies.
-              </ListItem>
-              <ListItem href="/docs/primitives/typography" title="Science">
-                Explore Interesting scientific information
-              </ListItem>
-              <ListItem href="/docs/primitives/typography" title="Education">
-                Access educational layout assistance.
-              </ListItem>
-              <ListItem href="/docs/primitives/typography" title="Design">
-                Find stylish UI element guidance.
-              </ListItem>
-              <ListItem href="/docs/primitives/typography" title="Dev">
-                Essential code styling tips.
-              </ListItem>
-              <ListItem href="/docs/primitives/typography" title="Journal">
-                Explore academic text formatting aids.
-              </ListItem>
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>Resources</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-              <ListItem href="/" title="About">
-                About the project.
-              </ListItem>
-              <ListItem href="/" title="Contact">
-                Contact me.
-              </ListItem>
-              <ListItem href="/" title="Donation">
-                Donate to the project.
-              </ListItem>
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
+        {pathname !== "/admin" && (
+          <>
+            <NavigationMenuItem>
+              <NavigationMenuTrigger>Categories</NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+                  <ListItem href="/docs" title="Productivity">
+                    Explore efficiency-boosting strategies.
+                  </ListItem>
+                  <ListItem href="/docs/primitives/typography" title="Science">
+                    Explore Interesting scientific information
+                  </ListItem>
+                  <ListItem
+                    href="/docs/primitives/typography"
+                    title="Education"
+                  >
+                    Access educational layout assistance.
+                  </ListItem>
+                  <ListItem href="/docs/primitives/typography" title="Design">
+                    Find stylish UI element guidance.
+                  </ListItem>
+                  <ListItem href="/docs/primitives/typography" title="Dev">
+                    Essential code styling tips.
+                  </ListItem>
+                  <ListItem href="/docs/primitives/typography" title="Journal">
+                    Explore academic text formatting aids.
+                  </ListItem>
+                </ul>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <NavigationMenuTrigger>Resources</NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+                  <ListItem href="/" title="About">
+                    About the project.
+                  </ListItem>
+                  <ListItem href="/" title="Contact">
+                    Contact me.
+                  </ListItem>
+                  <ListItem href="/" title="Donation">
+                    Donate to the project.
+                  </ListItem>
+                </ul>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+          </>
+        )}
       </NavigationMenuList>
     </NavigationMenu>
   );
