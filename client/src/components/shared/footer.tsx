@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "../ui/button";
-import { GithubIcon } from "lucide-react";
+import Link from "next/link";
+import { GITHUB_URL } from "@/lib/constants";
 
 const Footer = () => {
   return (
@@ -10,9 +11,9 @@ const Footer = () => {
         <span>Khash-Erdene Bolor-Erdene</span>
         <p className="text-muted-foreground">&copy; 2024</p>
       </p>
-      <Button variant={"ghost"}>
-        <GithubIcon className=" text-muted-foreground" />
-      </Button>
+      <Link href={GITHUB_URL} target="_blank">
+        <Button variant={"ghost"}>TODO: GITHUB LOGO HERE</Button>
+      </Link>
     </div>
   );
 };

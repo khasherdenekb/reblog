@@ -1,6 +1,5 @@
 import Blogs from "@/components/shared/blogs";
 import Header from "@/components/shared/header";
-import HomePage from "@/components/shared/test";
 import React from "react";
 
 const Home = () => {
@@ -8,7 +7,6 @@ const Home = () => {
     <div className="">
       <Header />
       <Blogs />
-      <HomePage />
     </div>
   );
 };
